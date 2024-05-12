@@ -19,6 +19,10 @@
             text-decoration: none;
             color: black;
         }
+        li {
+            list-style: none;
+        }
+
 
         /* headerTpye*/
         #headerTpye {}
@@ -37,6 +41,12 @@
             font-weight: 700;
         }
         .header__menu {}
+        .header__menu li {
+            display: inline;
+        }
+        .header__menu li a {
+            padding: 10px 30px;
+        }
         .header__search {}
         .header__member {}
     </style>
@@ -47,7 +57,12 @@
             <div class="header__logo">
                 <a href='#'>HUFS WiKi</a>
             </div>
-            <div class="header__menu"></div>
+            <nav class="header__menu">
+                <ul>
+                    <li><a href="#">지도</a></li>
+                    <li><a href="#">최근 변경</a></li>
+                </ul>
+            </nav>
             <div class="header__search"></div>
             <div class="header__member"></div>
         </div>
