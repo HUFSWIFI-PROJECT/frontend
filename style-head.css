@@ -142,11 +142,20 @@ li {
     height: 50%;
 }
 
-.ranking{
+.live_ranking{
     height: 50%;
 }
 
 .recent_change{
+    padding: 10px;
     height: 500px;
     background-color: beige;
+}
+
+.recent_head{
+    height: 30px;
+}
+
+.recent_ranking{
+
 }
