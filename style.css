@@ -152,8 +152,17 @@ li {
     background-color: beige;
 }
 
-.recent_head{
+.recent_name{
     height: 30px;
+}
+
+.recent_head{
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    top: 5px;
 }
 
 .recent_ranking{
