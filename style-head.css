@@ -81,3 +81,10 @@ li {
     padding: 10px;
     border: 1px solid ;
 }
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    
+}
