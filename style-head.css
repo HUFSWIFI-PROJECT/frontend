@@ -86,5 +86,24 @@ li {
     border: none;
     background: none;
     outline: none;
-    
+    float: left;
+    padding: 0px;
+    color: #797979;
+    font-size: 15px;
+    line-height: 30px;
+    width: 200px;
+}
+
+.search-btn{
+    color: #f9deec;
+    float: right;
+    width: 40px;
+    height: 100%;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
