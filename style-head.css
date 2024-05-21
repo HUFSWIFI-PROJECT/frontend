@@ -113,3 +113,40 @@ li {
     align-items: center;
     width: 20%;
 }
+
+.main_body{
+    margin: 20px;
+    display: flex;
+}
+
+.main_wiki{
+    height: 1000px;
+    width: 80%;
+    background-color: #b6fff6;
+}
+
+.side_wiki{
+    padding: 15px;
+    height: 1000px;
+    width: 20%;
+    background-color: #797979;
+}
+
+.live_change{
+    padding: 10px;
+    height: 130px;
+    background-color: #ffcaca;
+}
+
+.live_head{
+    height: 50%;
+}
+
+.ranking{
+    height: 50%;
+}
+
+.recent_change{
+    height: 500px;
+    background-color: beige;
+}
