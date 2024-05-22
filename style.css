@@ -134,35 +134,70 @@ li {
 
 .live_change{
     padding: 10px;
-    height: 130px;
+    height: 100px;
     background-color: #ffcaca;
+    margin-bottom: 5px;
+    border: 1px solid #000;
+    border-radius: 7px;
 }
 
 .live_head{
-    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.live_name{
+    font-size: 23px;
+    font-weight: 700px;
+    height: 30px;
+    margin: 5px;
 }
 
 .live_ranking{
-    height: 50%;
+    
 }
 
 .recent_change{
     padding: 10px;
-    height: 500px;
+    height: 400px;
     background-color: beige;
+    border: 1px solid #000;
+    border-radius: 7px;
 }
 
 .recent_name{
+    font-size: 23px;
+    font-weight: 700px;
     height: 30px;
+    margin: 5px;
 }
 
 .recent_head{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recent_head1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.recent_head2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .icon {
     top: 5px;
+}
+
+.fa-solid fa-angle-right{
+    
 }
 
 .recent_ranking{
