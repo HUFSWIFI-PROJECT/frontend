@@ -115,12 +115,13 @@ li {
 }
 
 .main__head{
+    font-size: 30px;
+    font-weight: 700px;
     height: 100px;
     width: 100%;
     margin: 5px;
 }
 
 .main__name{
-    font-size: 30px;
-    font-weight: 700px;
+    
 }
