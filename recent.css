@@ -116,11 +116,19 @@ li {
 
 .main__head{
     font-weight: 700px;
-    height: 100px;
+    height: 10%;
     width: 100%;
     margin: 5px;
 }
 
-.main__name{
-    
+.main{
+    margin: 10px;
+    height: 1000px;
+    width: 100%;
+}
+
+.main__body{
+    width: 100%;
+    height: 90%;
+    margin-top: 5px;
 }
