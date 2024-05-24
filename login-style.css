@@ -81,3 +81,8 @@ input, button {
   left: 50%;
   width: 50%;
 }
+
+.search-bnt{
+  background-color: transparent;
+  border: 0;
+}
