@@ -36,14 +36,6 @@ span {
   font-size: 12px;
 }
 
-a {
-  color: #333;
-  font-size: 14px;
-  text-decoration: none;
-  margin: 15px 0;
-}
-
-
 form {
   background-color: #FFFFFF;
   display: flex;
@@ -55,7 +47,7 @@ form {
   text-align: center;
 }
 
-input {
+input, button {
   background-color: #eee;
   border: none;
   padding: 12px 15px;
@@ -67,7 +59,6 @@ input {
   background-color: #fff;
   border-radius: 10px;
   position: relative;
-  overflow: hidden;
   width: 768px;
   max-width: 100%;
   min-height: 480px;
@@ -77,18 +68,16 @@ input {
   position: absolute;
   top: 0;
   height: 100%;
-  transition: all 0.6s ease-in-out;
+  border-right: #f6f5f7 solid 2px;
+  border-left: #f6f5f7 solid 2px;
 }
 
 .sign-in-container {
   left: 0;
   width: 50%;
-  z-index: 2;
 }
 
 .sign-up-container {
-  left: 0;
+  left: 50%;
   width: 50%;
-  opacity: 0;
-  z-index: 1;
 }

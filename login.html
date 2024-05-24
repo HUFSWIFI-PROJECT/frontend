@@ -7,19 +7,6 @@
         <link rel="stylesheet" href="./login-style.css"/>
         <script src="https://kit.fontawesome.com/f8b80fb68b.js" crossorigin="anonymous"></script>
     </head>
-    <script>
-        const signUpButton = document.getElementById('signUp');
-        const signInButton = document.getElementById('signIn');
-        const container = document.getElementById('container');
-
-        signUpButton.addEventListener('click', () => {
-        container.classList.add("right-panel-active");
-        });
-
-        signInButton.addEventListener('click', () => {
-        container.classList.remove("right-panel-active");
-        });
-    </script>
     <body>
         <div class="container" id="container">
             <div class="form-container sign-up-container">
@@ -29,7 +16,8 @@
                     <input type="text" name="name" placeholder="이름" />
                     <input type="email" name="email" placeholder="이메일" />
                     <input type="password" name="password" placeholder="비밀번호" />
-                    회원가입 <input type="submit" value="">
+                
+                    <button type="submit" value="">회원가입</button>
                 </form>
             </div>
             <div class="form-container sign-in-container">
@@ -40,7 +28,7 @@
                     <input type="email" name="email" placeholder="이메일" />
                     <input type="password" name="password" placeholder="비밀번호" />
 
-                    <input type="submit" placeholder="로그인" value="">
+                    <button type="submit" value="">로그인</button>
                 </form>
             </div>
         </div>
