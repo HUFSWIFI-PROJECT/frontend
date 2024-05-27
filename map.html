@@ -15,10 +15,20 @@
 <script>
     window.initMap = function () {
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 37.5400456, lng: 126.9921017 },
-    zoom: 10,
+    center: { lat: 37.339626, lng: 127.270813 },
+    zoom: 15,
   });
 };
+const malls = [
+    { label: "H", name: "코엑스몰", lat: 37.339626, lng: 127.270813 },
+  ];
+  malls.forEach(({ label, name, lat, lng }) => {
+    const marker = new google.maps.Marker({
+      position: { lat, lng },
+      label,
+      map,
+    });
+  });
 </script>
 <body>
     <header id="headerType" class="header__wrap nexon">
