@@ -15,7 +15,7 @@
             </div>
             <nav class="header__menu">
                 <ul>
-                    <li><a onclick="location.href = 'map.html'">지도</a></li>
+                    <li><a onclick="location.href = 'map.html'" target="">지도</a></li>
                     <li><a onclick="location.href = 'recent.html'">최근 변경</a></li>
                 </ul>
             </nav>
@@ -31,9 +31,32 @@
                 <a onclick = "location.href ='login.html'">로그인</a>
             </div>
     </header>
+    
 
     <div class="main_body">
-        <div class="main_wiki"></div>
+        
+        <div class="main_wiki" id = "targetid">
+                    <script>
+                    const urlParams = new URL(location.href).searchParams;
+                    var id = urlParams.get('id');
+                    if (typeof id == 'undefined') {
+                        id = 1;
+                    }
+                    console.log(id);
+
+                    
+                    fetch('http://152.69.225.60/findbyid?id='+id)
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log(data.content);
+                                    document.getElementById('targetid').innerHTML = data.content;
+                                })
+                                .catch(error => {
+                                    console.error('Error fetching data:', error);
+                                });
+                    </script>
+        </div>
+
         <div class="side_wiki">
             <div class="live_change">
                 <div class="live_head">
@@ -58,11 +81,33 @@
                     <div class="recent_head1">
                         <i class="fa-solid fa-clock" class="icon"></i>
                         <div class="recent_name">최근 변경</div>
+
                     </div>
                     <div class="recent_head2">
                         <a onclick="location.href = 'recent.html'"><i class="fa-solid fa-angle-right" class="icon"></i></a>  
                     </div>                  
                 </div>
+                <div id = "recent_body">
+                    <script>
+                        let contentHTML = '';
+                        fetch('http://152.69.225.60/findbyall')
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        for (let dat of data) {
+                                            console.log(dat.content);
+                                            contentHTML+='<a href="http://localhost:5500/frontend/index.html?id='+dat.id+'">'+dat.title+'</a><br>';
+                                        }
+                                        document.getElementById('recent_body').innerHTML = contentHTML;
+                                    })
+                                    .catch(error => {
+                                        console.error('Error fetching data:', error);
+                                    });
+                                
+    
+                        </script>
+
+                </div>
+                
                 <div class="recent_ranking"></div>
             </div>
         </div>
