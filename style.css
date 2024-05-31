@@ -196,9 +196,14 @@ li {
     top: 5px;
 }
 
-.fa-solid fa-angle-right{
-    
-}
 
-.recent_ranking{
+.txt-box{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+.title, .txt, .author, .bnt{
+    padding: 15px;
+    margin-top: 5px;
+    width: 88%;
 }
