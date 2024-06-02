@@ -125,13 +125,45 @@
                 <div class="recent_ranking"></div>
             </div>
             
-        <form name="saveform" class="txt-box" action="/asdas" >
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const form = document.forms['saveform'];
+                    form.addEventListener('submit', function(event) {
+                        event.preventDefault(); // Prevent the default form submission
+        
+                        // Gather the form data
+                        const formData = {
+                            title: form.title.value,
+                            content: form.content.value,
+                            author: form.author.value
+                        };
+        
+                        // Send the data as JSON
+                        fetch('http://152.69.225.60/save', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json;charset=UTF-8'
+                            },
+                            body: JSON.stringify(formData)
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Success:', data);
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                        });
+                    });
+                });
+            </script>
+            
+            <form name="saveform" class="txt-box" action="http://152.69.225.60/save" method="post">
             <input class="title" type="text" name="title" placeholder="string">
             <input class="txt" type="text" name="content" placeholder="string">
             <input class="author" type="text" name="author" placeholder="string">
             <button class="txt-bnt" type="submit" id = "submit">업로드</button>
         </form>
-
+        
 
         </div>
     </div>
