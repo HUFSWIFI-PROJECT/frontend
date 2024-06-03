@@ -138,6 +138,7 @@ li {
     margin-bottom: 5px;
     border-radius: 7px;
     background-color: rgb(0, 45, 86);
+    overflow: auto;
 }
 
 .live_head{
@@ -156,7 +157,7 @@ li {
 }
 
 .live_ranking{
-    
+    overflow-y: auto;
 }
 
 .recent_change{
@@ -192,6 +193,10 @@ li {
     align-items: center;
 }
 
+#recent_body{
+    overflow-y: auto;
+}
+
 .icon {
     top: 5px;
 }
@@ -214,7 +219,8 @@ li {
 }
 
 #title {
-    font-size: 50px;
+    font-size: 45px;
+    width: 80%;
 }
 
 #list {

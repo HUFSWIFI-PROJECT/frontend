@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>HUFS-WIKI</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/f8b80fb68b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
+
 <body>
     <header id="headerType" class="header__wrap nexon">
         <div class="header__inner">
@@ -15,14 +18,13 @@
             </div>
             <nav class="header__menu">
                 <ul>
-                    <li><a onclick="location.href = 'map.html'">지도</a></li>
-                    <li><a onclick = "location.href ='recent.html'">최근 변경</a></li>
+                    <li><a onclick="location.href = 'recent.html'">최근 변경</a></li>
                 </ul>
             </nav>
             <div class="header__search">
                 <form class="search-box" action="" method="get">
                     <input class="search-txt" type="text" name="" placeholder="검색어를 입력하세요.">
-                    <button class="search-bnt" type="submit">
+                    <button class="search-btn" type="submit" style="background-color: transparent;">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </form>
@@ -31,18 +33,18 @@
                 <a onclick = "location.href ='login.html'">로그인</a>
             </div>
     </header>
-
+    
     <div class="main_body">
-        
+        <h1 id="title">최근 변경 목록</h1>
         <div class="main_wiki" id = "targetid">
-                    <script>
+                <script>
                     const urlParams = new URL(location.href).searchParams;
                     var id = urlParams.get('id');
                     if (typeof id == 'undefined') {
                         id = 1;
                     }
                     console.log(id);
-
+                
                     
                     fetch('http://152.69.225.60/findbyid?id='+id)
                                 .then(response => response.json())
@@ -52,43 +54,48 @@
                                 })
                                 .catch(error => {
                                     console.error('Error fetching data:', error);
-                                });
-                    </script>
-        </div>
+                                });    
+                </script>
+        </div>>
 
         <div class="side_wiki">
             <div class="live_change">
                 <div class="live_head">
-                    <i class="fa-solid fa-fire" class="icon"></i>
-                    <div class="live_name">실시간 검색어</div>                    
+                    <i class="fa-solid fa-fire" class="icon" style="color: white;"></i>
+                    <div class="live_name">누적 조회수</div>                   
                 </div>
                 <div class="live_ranking">
-                    <a href="#"></a>
-                    <a href="#"></a>
-                    <a href="#"></a>
-                    <a href="#"></a>
-                    <a href="#"></a>
-                    <a href="#"></a>
-                    <a href="#"></a>
-                    <a href="#"></a>
-                    <a href="#"></a>
-                    <a href="#"></a>
+                    <script>
+                        var contentHTML1 = '';
+                        fetch('http://152.69.225.60/findOrderbyHit')
+                                .then(response => response.json())
+                                .then(data => {
+                                    for (let dat of data) {
+                                        contentHTML1+='<a href="http://localhost:5500/frontend/index.html?id='+dat.id+'">'+dat.title+' ('+dat.hits+'회)'+'</a><br>';   
+                                    }
+                                    document.getElementById('recent_body2').innerHTML = contentHTML1;
+                                })
+                                .catch(error => {
+                                    console.error('Error fetching data:', error);
+                                });
+                    </script>
+                
                 </div>
             </div>
             <div class="recent_change">
                 <div class="recent_head">
                     <div class="recent_head1">
-                        <i class="fa-solid fa-clock" class="icon"></i>
+                        <i class="fa-solid fa-clock" class="icon" style="color: white;"></i>
                         <div class="recent_name">최근 변경</div>
-
                     </div>
                     <div class="recent_head2">
-                        <a onclick="location.href = 'recent.html'"><i class="fa-solid fa-angle-right" class="icon"></i></a>  
+                        <a onclick="location.href = 'recent.html'"><i class="fa-solid fa-angle-right" class="icon" style="color: white;"></i></a>  
                     </div>                  
                 </div>
+
                 <div id = "recent_body">
                     <script>
-                        let contentHTML = '';
+                        var contentHTML = '';
                         fetch('http://152.69.225.60/findbyall')
                                     .then(response => response.json())
                                     .then(data => {
@@ -100,14 +107,54 @@
                                     })
                                     .catch(error => {
                                         console.error('Error fetching data:', error);
-                                    });    
+                                    });
+                                
+    
                         </script>
+
                 </div>
-                
-                <div class="recent_ranking"></div>
             </div>
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const form = document.forms['saveform'];
+                    form.addEventListener('submit', function(event) {
+                        event.preventDefault(); // Prevent the default form submission
+        
+                        // Gather the form data
+                        const formData = {
+                            title: form.title.value,
+                            content: form.content.value,
+                            author: form.author.value
+                        };
+        
+                        // Send the data as JSON
+                        fetch('http://152.69.225.60/save', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json;charset=UTF-8'
+                            },
+                            body: JSON.stringify(formData)
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Success:', data);
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                        });
+                    });
+                });
+            </script>
+            
+            <form name="saveform" class="txt-box" action="http://152.69.225.60/save" method="post">
+                <input class="title" type="text" name="title" placeholder="제목">
+                <textarea cols="50" rows="10" class="txt" type="text" name="content" placeholder="내용"></textarea>
+                <input class="author" type="text" name="author" placeholder="작성자">
+                <button class="txt-bnt" type="submit" id = "submit">업로드</button>
+            </form>
         </div>
     </div>
-    </div>
+
 </body>
 </html>
