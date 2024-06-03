@@ -40,7 +40,6 @@
             </div>
             <nav class="header__menu">
                 <ul>
-                    <li><a onclick="location.href = 'map.html'" target="">지도</a></li>
                     <li><a onclick="location.href = 'recent.html'">최근 변경</a></li>
                 </ul>
             </nav>
@@ -194,9 +193,9 @@
             </script>
             
             <form name="saveform" class="txt-box" action="http://152.69.225.60/save" method="post">
-                <input class="title" type="text" name="title" placeholder="string">
-                <input class="txt" type="text" name="content" placeholder="string">
-                <input class="author" type="text" name="author" placeholder="string">
+                <input class="title" type="text" name="title" placeholder="제목">
+                <textarea cols="50" rows="10" class="txt" type="text" name="content" placeholder="내용"></textarea>
+                <input class="author" type="text" name="author" placeholder="작성자">
                 <button class="txt-bnt" type="submit" id = "submit">업로드</button>
             </form>
         </div>
