@@ -172,10 +172,12 @@ li {
 }
 
 .live_ranking{
+    color: white;
     overflow-y: auto;
 }
 
 .recent_change{
+    overflow-y: auto;
     padding: 10px;
     height: 300px;
     border-radius: 7px;
@@ -211,6 +213,7 @@ li {
 }
 
 #recent_body{
+    color: white;
     overflow-y: auto;
 }
 
@@ -257,7 +260,6 @@ li {
 }
 
 .title_h2{
-    margin-left: 50px;
     margin-bottom: 10px;
 }
 
@@ -409,3 +411,8 @@ li {
   /* 사이드바 끝 */
   
   /* 커스텀 끝 */
+
+  .scroll {
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+  }
