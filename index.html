@@ -101,7 +101,7 @@
                     const urlParams = new URL(location.href).searchParams;
                     var id = urlParams.get('id');
                     if(typeof id == "undefined" || id == null || id == ""){
-                         location.href = "http://wiki.hufsnc.com/main.html";
+                         location.href = "http://localhost:5000/frontend/main.html";
                     } else{
                         fetch('http://152.69.225.60/findbyid?id='+id)
                                 .then(response => response.json())
