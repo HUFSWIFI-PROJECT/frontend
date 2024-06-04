@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUFS-WIKI</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+    </style>
+    <script src="https://kit.fontawesome.com/f8b80fb68b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZD-SSKWGGabCpjy4oqqUobPs21KjdjB0&callback=initMap"
+    ></script>
+    <script>
+        window.initMap = function () {
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 37.337442, lng: 127.265464 },
+        zoom: 15,
+      });
+    };
+    const malls = [
+        { label: "H", name: "한국외국어대학교", lat: 37.339626, lng: 127.270813 },
+      ];
+      malls.forEach(({ label, name, lat, lng }) => {
+        const marker = new google.maps.Marker({
+          position: { lat, lng },
+          label,
+          map,
+        });
+      });
+    </script>
+</head>
+
+<body>
+    <header id="headerType" class="header__wrap nexon">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a onclick="location.href = 'index.html'">HUFS WiKi</a>
+            </div>
+            <nav class="header__menu">
+                <ul>
+                    <li><a onclick="location.href = 'recent.html'">최근 변경</a></li>
+                </ul>
+            </nav>
+            <div class="header__search">
+                <form class="search-box" action="" method="get">
+                    <input class="search-txt" type="text" name="" placeholder="검색어를 입력하세요.">
+                    <button class="search-btn" type="submit" style="background-color: transparent;">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="header__member">
+                <a onclick = "location.href ='login.html'">로그인</a>
+            </div>
+    </header>
+    <aside class="side-bar">
+        <section class="side-bar__icon-box">
+            <section class="side-bar__icon-1">
+            <div></div>
+            <div></div>
+            <div></div>
+            </section>
+        </section>
+        <ul>
+            <li>
+                <a href="#"><i class="fa-solid fa-school"></i> 학교생활</a>
+                <ul>
+                    <li><a onclick = "location.href ='bab.html'">밥집</a></li>
+                    <li><a href="bus.html">교통(셔틀)</a></li>
+                    <li><a href="#">기숙사</a></li>
+                    <li><a href="#">동아리</a></li>
+                </ul>
+            </li>
+            <li>
+            <a href="#"><i class="fa-solid fa-pencil"></i> 캠퍼스</a>
+            <ul>
+                <li><a href="#">수강신청</a></li>
+                <li><a href="#">출,결석</a></li>
+                <li><a href="#">장학금</a></li>
+            </ul>
+            </li>
+            <li>
+            <a href="#"><i class="fa-sharp fa-solid fa-circle-info"></i> 대학 꿀팁</a>
+            <ul>
+                <li><a href="#">등록금 뽕뽑기</a></li>
+                <li><a href="#">과제 도움 사이트</a></li>
+                <li><a href="#">신입생을 위한 용어정리</a></li>
+            </ul>
+            </li>
+        </ul>
+    </aside>
+    
+    <div class="main_body">
+        <div class="main_wiki" id = "targetid">
+                <script>
+                    const urlParams = new URL(location.href).searchParams;
+                    var id = urlParams.get('id');
+                    if(typeof id == "undefined" || id == null || id == ""){
+                         location.href = "http://wiki.hufsnc.com/main.html";
+                    } else{
+                        fetch('http://152.69.225.60/findbyid?id='+id)
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log(data.content);
+                                    document.getElementById('targetid').innerHTML = data.content;
+                                })
+                                .catch(error => {
+                                    console.error('Error fetching data:', error);
+                                });    
+                    }
+                
+                    
+
+                </script>
+                <div class="babbab">
+                    <h1 id="title">HUFS-WIKI</h1>
+                    <h2>맛집</h2>
+                    <p>
+                    리오부리또 - 닭순웨치(닭고기, 순한맛, 웨지감자추가, 치즈추가)
+                    진성 부대찌개 - 부대찌개가 진짜 맛도리
+                    진성곱창 - 곱창이 미쳤음. 김치묵사발도 맛도리
+                    스시어게임 - 초밥이 진짜 크고 육회초밥 맛도리
+                    미가초밥 - 회덮밥 맛집
+                    666버거 - 수제버거이즈뭔들
+                    철뚝집 - 냉삼 말해뭐해 마지막 볶음밥까지 그저 갓벽
+                    대만족 - 족발이 맛없기 힘들지 같이 나오는 김치찌개 캬
+                    보쌈주는 족발집 - 개인적으로 냉채족발이랑 불족발이 미쳤더라
+                    이가명동찌개마을 - 이야 통목살김치찌개 겨울에 먹으면 지려.
+                    백채김치찌개 - 계란말이 필수.
+                    성수식당 - 반찬이 짜긴한데 닭도리탕이 그렇게 맛있더라
+                    자양포자 - 순두부찌개가 자극적이야. 성수식당 순찌가 심심해서 아쉬웠다면 추천
+                    샤브향 - 점심특선으로 싸게 먹길 바람
+                    피자보이 - 피자가 맛없기 힘들지
+                    기사식당 - 쭈삼이 정말 맛있어. 쭈꾸미와 삼겹살의 조합
+                    또봉이 통닭 - 너 왜 맛있어?
+                    마라장룡 - 마라탕이 먹고싶다? 고민하지말고 달려가 꿔바로우는 필순거 알지?
+                    엄마손칼국수 - 닭개장 칼국수는 꼭 한번은 먹어야지
+                    찐 타코 - 배달비 비싸니까 친구들이랑 엔빵 ㄱ
+                   </p>
+                   <br>
+                   <h2>꿀팁</h2>
+                   <p>
+                    1. 공학관 2층에 여자휴게실 있다.
+                    
+                    2. 학교 정문에서 인문경상관까지 가려면 도보 30분 정도 걸리니 셔틀버스를 타는 것을 추천. 시간표 잘 보고 타길 바람. 기숙사에 사는 경우 1교시가 인문경상관이거나 어문학관이면 아슬아슬하게 9시 버스나 적어도 8시 30분 전에 오는 버스를 타거나 열심히 걸어가는 것을 추천. 버스에 사람이 너무 많이 탐.
+                    
+                    3. 백년관 4층에 자대랑 연결된 길이 있다.
+                   </p>
+                </div>
+        </div>
+
+        <div class="side_wiki">
+            <div class="live_change">
+                <div class="live_head">
+                    <i class="fa-solid fa-fire" class="icon" style="color: white;"></i>
+                    <div class="live_name">누적 조회수</div>                   
+                </div>
+                <div class="live_ranking">
+                    <div id="live_ranking_body"></div>
+                    <script>
+                        var contentHTML1 = '';
+                        fetch('http://152.69.225.60/findOrderbyHit')
+                                .then(response => response.json())
+                                .then(data => {
+                                    for (let dat of data) {
+                                        contentHTML1+='<a href="http://wiki.hufsnc.com/index.html?id='+dat.id+'">'+dat.title+' ('+dat.hits+'회)'+'</a><br>';   
+                                    }
+                                    document.getElementById('live_ranking_body').innerHTML = contentHTML1;
+                                })
+                                .catch(error => {
+                                    console.error('Error fetching data:', error);
+                                });
+                    </script>
+                
+                </div>
+            </div>
+            <div class="recent_change">
+                <div class="recent_head">
+                    <div class="recent_head1">
+                        <i class="fa-solid fa-clock" class="icon" style="color: white;"></i>
+                        <div class="recent_name">최근 변경</div>
+                    </div>
+                    <div class="recent_head2">
+                        <a onclick="location.href = 'recent.html'"><i class="fa-solid fa-angle-right" class="icon" style="color: white;"></i></a>  
+                    </div>                  
+                </div>
+
+                <div id = "recent_body">
+                    <script>
+                        var contentHTML = '';
+                        fetch('http://152.69.225.60/findbyall')
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        for (let dat of data) {
+                                            console.log(dat.content);
+                                            contentHTML+='<a href="http://wiki.hufsnc.com/index.html?id='+dat.id+'">'+dat.title+'</a><br>';
+                                        }
+                                        document.getElementById('recent_body').innerHTML = contentHTML;
+                                    })
+                                    .catch(error => {
+                                        console.error('Error fetching data:', error);
+                                    });
+                                
+    
+                        </script>
+
+                </div>
+            </div>
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const form = document.forms['saveform'];
+                    form.addEventListener('submit', function(event) {
+                        event.preventDefault(); // Prevent the default form submission
+        
+                        // Gather the form data
+                        const formData = {
+                            title: form.title.value,
+                            content: form.content.value,
+                            author: form.author.value
+                        };
+        
+                        // Send the data as JSON
+                        fetch('http://152.69.225.60/save', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json;charset=UTF-8'
+                            },
+                            body: JSON.stringify(formData)
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Success:', data);
+                            alert("업로드 성공");
+                            form.title.value = "";
+                            form.content.value = "";
+                            form.author.value = "";
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                        });
+                    });
+                });
+            </script>
+            
+            <form name="saveform" class="txt-box" action="http://152.69.225.60/save" method="post">
+                <input class="title" type="text" name="title" placeholder="제목">
+                <textarea cols="50" rows="10" class="txt" type="text" name="content" placeholder="내용"></textarea>
+                <input class="author" type="text" name="author" placeholder="작성자">
+                <button class="txt-bnt" type="submit" id = "submit">업로드</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
