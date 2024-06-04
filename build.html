@@ -11,28 +11,6 @@
     </style>
     <script src="https://kit.fontawesome.com/f8b80fb68b.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script
-    defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZD-SSKWGGabCpjy4oqqUobPs21KjdjB0&callback=initMap"
-    ></script>
-    <script>
-        window.initMap = function () {
-      const map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 37.337442, lng: 127.265464 },
-        zoom: 15,
-      });
-    };
-    const malls = [
-        { label: "H", name: "한국외국어대학교", lat: 37.339626, lng: 127.270813 },
-      ];
-      malls.forEach(({ label, name, lat, lng }) => {
-        const marker = new google.maps.Marker({
-          position: { lat, lng },
-          label,
-          map,
-        });
-      });
-    </script>
     
 </head>
 
@@ -71,9 +49,9 @@
             <li>
                 <a href="#"><i class="fa-solid fa-school"></i> 캠퍼스</a>
                 <ul>
-                    <li><a onclick = "location.href ='bab.html'">밥집</a></li>
+                    <li><a href ='./bab.html'>밥집</a></li>
                     <li><a href="#">교통(셔틀)</a></li>
-                    <li><a onclick = "location.href ='build.html'">학교건물</a></li>
+                    <li><a href ='./build.html'>학교건물</a></li>
                     <li><a href="#">동아리</a></li>
                 </ul>
             </li>
