@@ -246,6 +246,10 @@
                         .then(response => response.json())
                         .then(data => {
                             console.log('Success:', data);
+                            alert("업로드 성공");
+                            form.title.value = "";
+                            form.content.value = "";
+                            form.author.value = "";
                         })
                         .catch((error) => {
                             console.error('Error:', error);
