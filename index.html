@@ -101,7 +101,7 @@
                     const urlParams = new URL(location.href).searchParams;
                     var id = urlParams.get('id');
                     if(typeof id == "undefined" || id == null || id == ""){
-                         location.href = "http://localhost:5500/main.html";
+                         location.href = "http://wiki.hufsnc.com/main.html";
                     } else{
                         fetch('http://152.69.225.60/findbyid?id='+id)
                                 .then(response => response.json())
@@ -199,7 +199,7 @@
                                 .then(response => response.json())
                                 .then(data => {
                                     for (let dat of data) {
-                                        contentHTML1+='<a href="http://localhost:5500/index.html?id='+dat.id+'">'+dat.title+' ('+dat.hits+'회)'+'</a><br>';   
+                                        contentHTML1+='<a href="http://wiki.hufsnc.com/index.html?id='+dat.id+'">'+dat.title+' ('+dat.hits+'회)'+'</a><br>';   
                                     }
                                     document.getElementById('live_ranking_body').innerHTML = contentHTML1;
                                 })
@@ -229,7 +229,7 @@
                                     .then(data => {
                                         for (let dat of data) {
                                             console.log(dat.content);
-                                            contentHTML+='<a href="http://localhost:5500/index.html?id='+dat.id+'">'+dat.title+'</a><br>';
+                                            contentHTML+='<a href="http://wiki.hufsnc.com/index.html?id='+dat.id+'">'+dat.title+'</a><br>';
                                         }
                                         document.getElementById('recent_body').innerHTML = contentHTML;
                                     })
