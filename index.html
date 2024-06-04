@@ -6,6 +6,10 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>HUFS-WIKI</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+    </style>
     <script src="https://kit.fontawesome.com/f8b80fb68b.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script
@@ -55,6 +59,42 @@
                 <a onclick = "location.href ='login.html'">로그인</a>
             </div>
     </header>
+    <aside class="side-bar">
+        <section class="side-bar__icon-box">
+            <section class="side-bar__icon-1">
+            <div></div>
+            <div></div>
+            <div></div>
+            </section>
+        </section>
+        <ul>
+            <li>
+                <a href="#"><i class="fa-solid fa-school"></i> 학교생활</a>
+                <ul>
+                    <li><a href="#">밥집</a></li>
+                    <li><a href="bus.html">교통(셔틀)</a></li>
+                    <li><a href="#">기숙사</a></li>
+                    <li><a href="#">동아리</a></li>
+                </ul>
+            </li>
+            <li>
+            <a href="#"><i class="fa-solid fa-pencil"></i> 캠퍼스</a>
+            <ul>
+                <li><a href="#">수강신청</a></li>
+                <li><a href="#">출,결석</a></li>
+                <li><a href="#">장학금</a></li>
+            </ul>
+            </li>
+            <li>
+            <a href="#"><i class="fa-sharp fa-solid fa-circle-info"></i> 대학 꿀팁</a>
+            <ul>
+                <li><a href="#">등록금 뽕뽑기</a></li>
+                <li><a href="#">과제 도움 사이트</a></li>
+                <li><a href="#">신입생을 위한 용어정리</a></li>
+            </ul>
+            </li>
+        </ul>
+    </aside>
     
     <div class="main_body">
         <div class="main_wiki" id = "targetid">
@@ -84,18 +124,64 @@
                         <li><a href="#content1">1. 한국외국어대학교 글로벌캠퍼스 위치</a></li>
                         <li><a href="#content1">1-1. 지도&주소</a></li>    
                         <li><a href="#content2">2. 소개</a></li>
+                        <li><a href="#content2">2-1. 역사</a></li>
+                        <li><a href="#content2">2-2. 슬로건</a></li>
+
                     </ul>
                 </div>
                 <div class="subtitle">                                
                     <h2 id="content1" class="title_h2">1. 한국외국어대학교 글로벌캠퍼스 위치</h2>
                     <h2 id="content1" class="title_h2">&nbsp;&nbsp;&nbsp;1-1. 지도&주소</h2>
                     <hr>
-
                     <div id="map" style="width: 80%; height: 300px; border-color: #ccc;"></div>
+                    <p>
+                        <b>서울캠퍼스</b> (02450) 서울특별시 동대문구 이문로 107
+                        <br>
+                        Tel. 82-2-2173-2114
+                        <br>
+                        <br>
+                        <b>글로벌캠퍼스</b> (17035) 경기도 용인시 처인구 모현읍 외대로 81
+                        <br>
+                        Tel. 031-330-4114      
+                    </p>
                 </div>
+                <br>
                 <div class="subtitle">
                     <h2 id="content2" class="title_h2">2. 소개</h2>
+                    <h2 id="content2" class="title_h2">&nbsp;&nbsp;&nbsp;2-1. 역사</h2>
                     <hr>
+                    <p>
+                        한국육영회의 한국정경대학교와 대한민국 정부의 국립 서울외국어대학의 설립 의지가 모여 개교했다.
+                    </p>
+                    <br>
+                    <p>
+                        1952년 한국육영회 이사장 동원(東園) 김흥배 박사는 한국정경대 설립을 도모하고 있었고, 
+                        당시 정부는 국가 재건을 위해, 외교관 양성과 인재들의 해외 유학을 지원할 외국학 대학교를 필요로 하고 있었다. 
+                        국립 대학이 범람한다는 여론에 외국어대학을 국립으로 설립하는 과정은 번번이 실패했고, 
+                        따라서 정부는 사립으로라도 외국어대학을 설립하려고 했고 때마침 한국정경대를 설립하려는 한국육영회와 뜻을 합치게 된다.
+                    </p>
+                    <br>
+                    <p>
+                        전쟁 이후 황폐해진 조국에서 영국 정부와 UN 한국재건단의 전폭적인 지원에 힘입어 1954년 
+                        한국외국어대학(Foreign Language College of Korea)의 이름으로 공식 개교한다. 설립자 김흥배 박사가 한국외국어대학이라는 
+                        이름을 제안하였고 1953년 10월 정부가 이를 수용했기 때문이다.
+                        1962년 영문명을 Hankuk University of Foreign Studies로 교체하여 지금까지 이어져오고 있다. 
+                    </p>
+                    <br>
+                    <p>
+                        1980년 종합대학 인가를 받으며 국문명을 한국외국어대학교로 변경하였다. 
+                        이 시기에 경기도 용인시 처인구 모현읍에 현재의 글로벌캠퍼스를 설립하여 훗날 
+                        서울캠퍼스 소속의 문리과대학 및 이공 계열이 이주하게 되었으며 차후에 2014년 서울캠퍼스와 
+                        글로벌캠퍼스가 본/분교 체제에서 이원화 캠퍼스 체제로 통합되어 모든 단과 대학 간의 전과 및 이중전공, 부전공 이수 선택이 가능해지는 변화를 겪었다.
+                    </p>
+                    <br>
+                    <h2 id="content2" class="title_h2">&nbsp;&nbsp;&nbsp;2-2. 슬로건</h2>
+                    <hr>
+                    <h3>[슬로건]</h3>
+                    "외대를 만나면 세계가 보인다"
+                    <br>
+                    <h3>[창학정신]</h3>
+                    진리, 평화, 창조
                 </div>
         </div>
 
