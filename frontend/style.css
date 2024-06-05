@@ -405,3 +405,25 @@ li {
   
   /* 커스텀 끝 */
 
+
+.box1 {
+    padding: 10px;
+    margin: 20px;
+    border-color: #555;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.box2 {
+    padding: 10px;
+    margin: 20px;
+    border-color: #555;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
