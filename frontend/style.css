@@ -142,7 +142,7 @@ li {
 
 .side_wiki{
     padding: 15px;
-    width: 15%;
+    width: 18%;
 }
 
 .live_change{
@@ -172,6 +172,8 @@ li {
 
 .live_ranking{
     color: white;
+    margin-bottom: 10px;
+
 }
 
 .recent_change{
@@ -215,6 +217,7 @@ li {
 }
 
 #live_ranking_body{
+    height: 150px;
     overflow-y: scroll;
 }
 
@@ -224,7 +227,7 @@ body{
    ::-webkit-scrollbar {
      display: none;
    }
-   
+
 .icon {
     top: 5px;
 }
