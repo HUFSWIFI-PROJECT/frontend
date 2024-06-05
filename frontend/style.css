@@ -210,9 +210,21 @@ li {
 }
 
 #recent_body{
+    overflow-y: scroll;
     color: white;
 }
 
+#live_ranking_body{
+    overflow-y: scroll;
+}
+
+body{
+    -ms-overflow-style: none;
+    }
+   ::-webkit-scrollbar {
+     display: none;
+   }
+   
 .icon {
     top: 5px;
 }
