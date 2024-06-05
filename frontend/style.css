@@ -418,6 +418,11 @@ body{
   /* 커스텀 끝 */
 
 
+.box {
+    display: flex;
+    flex-direction: column;
+}
+
 .box1 {
     padding: 10px;
     margin: 20px;
@@ -425,7 +430,7 @@ body{
     background-color: aliceblue;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 80%;
 }
 
@@ -436,6 +441,6 @@ body{
     background-color: aliceblue;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 80%;
 }
